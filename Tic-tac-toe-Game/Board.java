@@ -31,9 +31,8 @@ public class Board {
     }
 
     public boolean isWin(char player) {
-        // Cek baris, kolom, dan diagonal
         for (int i = 0; i < SIZE; i++) {
-            if ((board[i][0] == player && board[i][1] == player && board[i][2] == player) || 
+            if ((board[i][0] == player && board[i][1] == player && board[i][2] == player) ||
                 (board[0][i] == player && board[1][i] == player && board[2][i] == player)) {
                 return true;
             }
@@ -51,5 +50,10 @@ public class Board {
             }
         }
         return true;
+    }
+
+    // Menambahkan metode getMark untuk mengambil tanda di posisi tertentu
+    public char getMark(int row, int col) {
+        return board[row][col];
     }
 }

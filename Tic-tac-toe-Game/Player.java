@@ -1,17 +1,22 @@
-import java.util.Scanner;
-
 public class Player {
-    private char symbol;
+    private char mark;
 
-    public Player(char symbol) {
-        this.symbol = symbol;
+    public Player(char mark) {
+        this.mark = mark;
+    }
+
+    public char getMark() {
+        return mark;
     }
 
     public int[] getMove(Board board) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter row and column (0, 1, 2) separated by space: ");
-        int row = scanner.nextInt();
-        int col = scanner.nextInt();
-        return new int[] {row, col};
+        // Implementasi sederhana untuk mendapatkan input pemain (misalnya koordinat)
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
+        int row, col;
+        System.out.println("Enter row (0-2): ");
+        row = scanner.nextInt();
+        System.out.println("Enter col (0-2): ");
+        col = scanner.nextInt();
+        return new int[]{row, col};
     }
 }
